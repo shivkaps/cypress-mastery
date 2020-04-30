@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"baseUrl": "../node_modules",
+		"types": ["cypress"]
+	},
+	"include": [
+		"**/*.*",
+		"../e2e.spec.js",
+		"integration/visual-tests/single-element.spec.js",
+		"../full-page.spec.js"
+	]
+}

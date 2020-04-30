@@ -1,0 +1,32 @@
+{
+  "name": "cypress-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run-mastery": "cypress run",
+    "cy:bdd": "cypress run --spec **/cucumber-tests/*.feature",
+    "cy:run-e2e-prod": "cypress run --spec **/e2e/*.js --env configFile=prod",
+    "cy:run-e2e-staging": "cypress run --spec **/e2e/*.js --env configFile=staging",
+    "cy:run-visual-tests": "cypress run --browser chrome --headless --spec **/VisualTests/*.js",
+    "cy:update-snapshots": "cypress run --env updateSnapshots=true",
+    "cy:run--snapshot-tests-with-reporter": "cypress run --reporter cypress-image-snapshot/reporter",
+    "cy:run-tests-with-no-failure": "cypress run --env failOnSnapshotDiff=false"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^4.5.0",
+    "cypress-image-snapshot": "^3.1.1",
+    "cypress-cucumber-preprocessor": "^2.3.1",
+    "cypress-xpath": "^1.4.0",
+    "prettier": "^2.0.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "cypress-dark": "^1.7.14"
+  }
+}

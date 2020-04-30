@@ -1,0 +1,36 @@
+cy.visit -> Visit a URL
+cy.wait -> wait
+cy.pause -> Pauses execution until you click the resume button
+cy.debug -> Debug a function
+cy.get().its('length') -> Get total number of elements
+cy.reload -> Reloading the webpage
+cy.get() -> Get the element
+.clear() -> Clear the input box
+.type() -> Type
+.type({enter}) -> Keyboard Keys Simulation
+.check() -> Checkbox ticking
+.select() -> Select a value from checkbox
+.screenshot() -> screenshot of element
+.scrollIntoView() -> Scroll towards an element
+cy.get().should().and() -> Chaining assertion
+cy.clearCookies({log : true}) -> Clear Cookies
+cy.viewport(1980, 1080) || cy.viewport('iphone-x') -> Device Simulation
+cy.url -> Get the current url of the page
+cy.title - > Get the title of the page
+cy.fixtures().then(data => { ... }) -> Load data from Fixtures
+Cypress.Commands.add("", (email, password) => { ... }) -> Reusable Commands /support/command.js
+cy.screenshot({ capture: 'fullPage' }) -> full page screenshot
+cy.writeFile('cypress/data.txt', 'Hello') -> Writing to a file
+cy.readFile('cypress/data.txt').then((url) => { ... }) -> Reading to a file
+cy.readFile('...').should('eq', 'Hello') -> Text File
+cy.writeFile('cypress/data1.json', {name: 'mike', age: 25}}) -> Writing to a file
+cy.readFile('...').its('age').should('eq', 'Hello') -> Json Files
+cy.xpath -> Use xpath instead of CssSelector (Only works in chrome)
+before(function () { ... }) -> Runs before all tests in describe
+after(function () { ... }) -> -> Runs after all tests in describe
+beforeEach(function () { ... }) -> Runs before each it block in describe
+afterEach(function () { ... }) -> Runs after each it block in describe
+it.skip('', () => { ... }) -> Skips the it block
+it.only('', () => { ... }) -> Only runs this it block and skips the rest
+cy.go('back')
+cy.go('forward')
