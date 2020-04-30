@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  cypress-run:
     docker:
       - image: cypress/base:14.0.0
         environment:
@@ -31,4 +31,11 @@ jobs:
     - docker build -t shivkaps/cypress-mastery .
     - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
     - docker push shivkaps/cypress-mastery
+    
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      — cypress-run
+      — docker-build-and-push
     
