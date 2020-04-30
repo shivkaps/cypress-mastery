@@ -33,10 +33,9 @@ jobs:
     - run: docker push shivkaps/cypress-mastery
     
 workflows:
-    build-and-test:
+    test-and-docker-push:
       jobs:
         - cypress-run
-    docker-build-and-run:
-      jobs:
         - docker-build-and-push
+        
     
