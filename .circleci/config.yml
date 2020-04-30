@@ -16,6 +16,7 @@ jobs:
   docker-build-and-run:
     machine: true
     steps:
+      - checkout
       - run: pwd
       - run: ls
       - run: docker build -t shivkaps/cypress-mastery .
