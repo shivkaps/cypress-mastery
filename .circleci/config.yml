@@ -33,11 +33,10 @@ jobs:
     - docker push shivkaps/cypress-mastery
     
 workflows:
-  version: 2.1
-  build_and_test:
-    jobs:
-      — cypress-run
-  docker_build_and_push:
-    jobs:      
-      — docker-build-and-push
+    build-and-test:
+      jobs:
+        - cypress-run
+    docker-build-and-run:
+      jobs:
+        - docker-build-and-push
     
