@@ -1,14 +1,19 @@
 version: 2
 jobs:
-  build:
+  cypress-run:
     docker:
-      - image: cypress/base:8
+      - image: cypress/base:14
         environment:
           ## this enables colors in the output
           TERM: xterm
     working_directory: ~/app
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
       - run:
           name: Install Dependencies
           command: npm install
@@ -19,3 +24,12 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run cy:bdd
+    docker-build-and-push:
+      machine: true
+        steps:
+          - checkout
+          - docker build -t shivkaps/cypress-mastery .
+          - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+          - docker push shivkaps/cypress-mastery
+          
+          
