@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  cypress: cypress-io/cypress@1
 jobs:
   build-and-test:
     executor:
@@ -12,7 +12,6 @@ jobs:
             - run: pwd
             - run: ls
             - run: npm install
-            - run: cypress install
             - run: npm run ${TEST}
   docker-build-and-run:
     machine: true
