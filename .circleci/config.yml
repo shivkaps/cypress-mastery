@@ -29,9 +29,9 @@ jobs:
       - image: cimg/base:2020.01
     steps:
     - checkout
-    - docker build -t shivkaps/cypress-mastery .
-    - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-    - docker push shivkaps/cypress-mastery
+    - run: docker build -t shivkaps/cypress-mastery .
+    - run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+    - run: docker push shivkaps/cypress-mastery
     
 workflows:
     build-and-test:
