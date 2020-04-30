@@ -10,10 +10,11 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: npm run $test
+            - run: npm run $TEST
   docker-build-and-run:
     machine: true
     steps:
+      - run: ls
       - run: docker build -t shivkaps/cypress-mastery .
       - run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
       - run: docker push shivkaps/cypress-mastery
