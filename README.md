@@ -3,7 +3,7 @@
 This repository contains 3 cypress frameworks:
 
 1. Cypress-Cucumber
-2. Cypress e2e
+2. Cypress e2e test
 3. Cypress Visual Tests
 
 ## Project Structure
