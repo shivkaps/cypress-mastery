@@ -7,12 +7,11 @@ jobs:
       name: node/default
     steps:
       - checkout
-          steps:
-            - run: pwd
-            - run: ls
-            - run: npm install
-            - run: npm install cypress
-            - run: npm run ${TEST}
+      - run: pwd
+      - run: ls
+      - run: npm install
+      - run: npm install cypress
+      - run: npm run ${TEST}
   docker-build-and-run:
     machine: true
     steps:
