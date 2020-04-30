@@ -26,10 +26,10 @@ jobs:
       - run: npm run cy:bdd
     docker-build-and-push:
       machine: true
-        steps:
-          - checkout
-          - docker build -t shivkaps/cypress-mastery .
-          - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-          - docker push shivkaps/cypress-mastery
+      steps:
+        - checkout
+        - docker build -t shivkaps/cypress-mastery .
+        - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+        - docker push shivkaps/cypress-mastery
           
           
