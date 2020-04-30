@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  cypress-run:
+  build:
     docker:
       - image: cypress/base:14
         environment:
@@ -24,12 +24,13 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run cy:bdd
-    docker-build-and-push:
-      machine: true
-      steps:
-        - checkout
-        - docker build -t shivkaps/cypress-mastery .
-        - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-        - docker push shivkaps/cypress-mastery
+      
+  docker-build-and-push:
+    machine: true
+    steps:
+    - checkout
+    - docker build -t shivkaps/cypress-mastery .
+    - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+    - docker push shivkaps/cypress-mastery
           
           
