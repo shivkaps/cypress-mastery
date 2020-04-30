@@ -12,6 +12,8 @@ jobs:
             - run: npm install
             - run: npm run $test
   docker-build-and-run:
+    docker:
+      - image: alpine:latest
     steps:
       - run: docker build -t shivkaps/cypress-mastery .
       - run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
@@ -23,3 +25,4 @@ workflows:
     docker-build-and-run:
       jobs:
         - docker-build-and-run
+        
