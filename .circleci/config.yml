@@ -23,7 +23,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm run cy:bdd    
+      - run: npm run $TEST   
   docker-build-and-push:
     machine: true
     steps:
