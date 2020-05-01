@@ -1,4 +1,4 @@
-const sizes = ['iphone-x', 'ipad-2', [1200, 800]]
+const sizes = ['macbook-13', 'ipad-2', [1200, 800]]
 
 describe('Loading website for Visual Regression', () => {
 	it(`visit the website`, () => {
