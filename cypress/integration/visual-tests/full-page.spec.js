@@ -1,4 +1,4 @@
-const pages = ['http://zero.webappsecurity.com/login.html']
+const pages = ['http://example.com/']
 const sizes = ['iphone-x', 'ipad-2', [1200, 800]]
 
 describe('Full Page Visual Regression', () => {
